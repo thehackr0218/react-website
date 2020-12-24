@@ -4,7 +4,7 @@ import twitchApi from 'twitch-api-v5';
 twitchApi.clientID = 'mpt4fesyjao2cxw9gb78dmh865nlma';
 
 
-function SwitchStreamOrSchedule (props) {
+/* function SwitchStreamOrSchedule (props) {
     let streamUp = props.streamUp;
     if (streamUp){
         return(
@@ -19,7 +19,7 @@ function SwitchStreamOrSchedule (props) {
 
 function checkIfStreaming () {
     return false;
-}
+} */
 
 function twitch () {
         return(
