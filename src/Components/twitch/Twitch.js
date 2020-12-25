@@ -1,29 +1,57 @@
+import React from 'react'
 import './twitch.css'
 import twitchApi from 'twitch-api-v5';
+import { TwitchEmbed } from 'react-twitch-embed';
+import '../getScreenSize'
+import useWindowDimensions from '../getScreenSize';
 
 twitchApi.clientID = 'mpt4fesyjao2cxw9gb78dmh865nlma';
 
+function Pog(){
+    return(
+        <div className="pog">
+           <h1>{twitchApi.streams.live('524456436')}</h1>
+        </div>
+    )
+}
 
-/* function SwitchStreamOrSchedule (props) {
+
+function SwitchStreamOrSchedule (props) {
     let streamUp = props.streamUp;
+    const { width } = useWindowDimensions();
     if (streamUp){
-        return(
-            <div className="placeholder">twitch placeholder, website needs to be ssl</div>
-        );
+        return (
+            <div className="worked">
+              <TwitchEmbed
+                channel="pisanvs"
+                id="pisanvs"
+                theme="dark"
+                height={750}
+                width={(90 / 100) * width}
+                muted
+              />
+            </div>
+          );
     }else{
         return(
-            <p className="schedule">schedule placeholder</p>
+            <div className="didnt">
+                <p>I stream every other day at 3:30PM, <a href="https://twitch.tv/pisanvs">follow me</a> to get notified! :)</p>
+            </div>
         );
     }
 }
 
 function checkIfStreaming () {
-    return false;
-} */
+    
+    return true;
+}
 
 function twitch () {
         return(
-            <p></p>
+            <div className="twitch">
+                <SwitchStreamOrSchedule streamUp={checkIfStreaming()}/>
+                <Pog />
+            </div>
         );
 }
 

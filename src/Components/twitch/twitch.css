@@ -1,0 +1,36 @@
+.twitch {
+    background-attachment: fixed;
+    background-image: url(https://images.pexels.com/photos/1054289/pexels-photo-1054289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+.worked {
+    background-color: #18181B;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+.didnt {
+    background-color: #00000099;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 40%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+a{
+    color: #dddddd;
+
+}
+a:visited{
+    color: #d1d1d1;
+}
+a:hover{
+    color: #ac76df;
+}
