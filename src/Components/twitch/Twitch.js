@@ -7,13 +7,7 @@ import useWindowDimensions from '../getScreenSize';
 
 twitchApi.clientID = 'mpt4fesyjao2cxw9gb78dmh865nlma';
 
-function Pog(){
-    return(
-        <div className="pog">
-           <h1>{twitchApi.streams.live('524456436')}</h1>
-        </div>
-    )
-}
+
 
 
 function SwitchStreamOrSchedule (props) {
@@ -42,15 +36,17 @@ function SwitchStreamOrSchedule (props) {
 }
 
 function checkIfStreaming () {
-    
-    return true;
+    if(twitchApi.streams.live('524456436')){
+        return true;
+    }else {
+        return false
+    }
 }
 
 function twitch () {
         return(
             <div className="twitch">
                 <SwitchStreamOrSchedule streamUp={checkIfStreaming()}/>
-                <Pog />
             </div>
         );
 }
