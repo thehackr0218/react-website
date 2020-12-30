@@ -1,12 +1,17 @@
-.twitch {
+body {
     background-attachment: fixed;
-    background-image: url(https://images.pexels.com/photos/1054289/pexels-photo-1054289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-image: url(https://pixabay.com/get/57e3d4424857ad14f6d1867dda3536781536dced51507840_1920.jpg?attachment=);
+}
+.twitch {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+    height: 100%;
+    overflow-y: visible;
+
 }
 .worked {
     background-color: #18181B;
@@ -19,18 +24,12 @@
     color: #ffffff;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-right: 40%;
     padding-left: 20px;
     padding-right: 20px;
 }
-
-a{
-    color: #dddddd;
-
+.followme {
+    color: #E9A539;
 }
-a:visited{
-    color: #d1d1d1;
-}
-a:hover{
-    color: #ac76df;
+.followme:visited {
+    color: #E9A539;
 }

@@ -1,11 +1,9 @@
 import React from 'react'
 import './twitch.css'
-import twitchApi from 'twitch-api-v5';
 import { TwitchEmbed } from 'react-twitch-embed';
 import '../getScreenSize'
 import useWindowDimensions from '../getScreenSize';
 
-twitchApi.clientID = 'mpt4fesyjao2cxw9gb78dmh865nlma';
 
 
 
@@ -29,17 +27,26 @@ function SwitchStreamOrSchedule (props) {
     }else{
         return(
             <div className="didnt">
-                <p>I stream every other day at 3:30PM, <a href="https://twitch.tv/pisanvs">follow me</a> to get notified! :)</p>
+                <p>I stream every other day at 3:30PM, <a href="https://twitch.tv/pisanvs" className="followme">follow me</a> to get notified! :)</p>
             </div>
         );
     }
 }
 
-function checkIfStreaming () {
-    if(twitchApi.streams.live('524456436')){
+function checkIfStreaming() {
+    let now = new Date();
+    let start = new Date(now.getFullYear(), 0, 0);
+    let diff = now - start;
+    let oneDay = 1000 * 60 * 60 * 24;
+    let day = Math.floor(diff / oneDay);
+    const startTime = 15 * 60 + 30;
+    const endTime =  18 * 60 + 30;
+    const date = new Date(); 
+    const nowTime = date.getHours() * 60 + date.getMinutes();
+    if (day % 2 === 0 && startTime <= nowTime && nowTime <= endTime) {
         return true;
     }else {
-        return false
+        return false;
     }
 }
 

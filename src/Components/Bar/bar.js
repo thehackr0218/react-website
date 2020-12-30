@@ -1,18 +1,18 @@
 import React from 'react'
-import { BarContainer, Icon, CloseIcon, SidebarWrapper, SidebarLink, SidebarMenu } from './barElements'
+import { BarContainer, Icon, CloseIcon, SidebarWrapper, SidebarRoute, SidebarMenu, SidebarScroll } from './barElements'
 
-function bar() {
+function bar({ isOpen, toggle }) {
     return (
-        <BarContainer>
-            <Icon>
+        <BarContainer isOpen={isOpen} onClick={toggle}>
+            <Icon onClick={toggle}>
                 <CloseIcon />
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
-                    <SidebarLink to="/about">About me</SidebarLink>
-                    <SidebarLink to="/events">Events</SidebarLink>
-                    <SidebarLink to="/bookme">Book Me</SidebarLink>
-                    <SidebarLink to="/gallery">Gallery</SidebarLink>
+                    <SidebarScroll to="about" smooth  onClick={toggle}>About me</SidebarScroll>
+                    <SidebarScroll to="events" smooth onClick={toggle}>Events</SidebarScroll>
+                    <SidebarRoute to="/bookme" onClick={toggle}>Book Me</SidebarRoute>
+                    <SidebarRoute to="/gallery" onClick={toggle}>Gallery</SidebarRoute>
                 </SidebarMenu>
             </SidebarWrapper>
         </BarContainer>

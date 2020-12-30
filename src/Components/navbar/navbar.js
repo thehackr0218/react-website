@@ -1,20 +1,20 @@
 import React from 'react'
-import { Nav, NavLink, Bars, NavMenu } from './navElements'
+import { Nav, NavRoute, Bars, NavMenu, NavScroll } from './navElements'
 
-function navbar() {
+function Navbar({ toggle }) {
     return (
         <>
             <Nav>
-                <NavLink to="/"> <h1 className="nav">PISANVS</h1> </NavLink>
-                <Bars />
+                <NavRoute to="/" > <h1 className="nav">PISANVS</h1> </NavRoute>
+                <Bars onClick={toggle} />
                 <NavMenu>
-                    <NavLink to="/about" activeStyle>About me</NavLink>
-                    <NavLink to="/events" activeStyle>Events</NavLink>
-                    <NavLink to="/bookme" activeStyle>Book me</NavLink>
-                    <NavLink to="/gallery" activeStyle>Gallery</NavLink>
+                    <NavScroll to="about" smooth activestyle>About me</NavScroll>
+                    <NavScroll to="events" smooth activestyle>Events</NavScroll>
+                    <NavRoute to="/bookme" exact>Book me</NavRoute>
+                    <NavRoute to="/gallery" exact>Gallery</NavRoute>
                 </NavMenu>
             </Nav>
         </>
     )
 }
-export default navbar 
+export default Navbar 
